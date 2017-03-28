@@ -32,7 +32,7 @@ int main() {
         exit(1);
     }
     
-    std::cout << "Socket port " << server.sin_port << std::endl;
+    std::cout << "Socket port " << ntohs(server.sin_port) << std::endl;
     
     // Start accepting connections
     listen(sockfd, 10);

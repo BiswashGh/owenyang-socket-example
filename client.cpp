@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     }
     memcpy(&server.sin_addr, host->h_addr, host->h_length);
 
-    server.sin_port = atoi(argv[2]);
+    server.sin_port = htons(atoi(argv[2]));
 
     // Connect to server
     if (connect(sockfd, (struct sockaddr *) &server, sizeof(server)) == -1) {
